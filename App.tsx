@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useMemo} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -31,33 +31,30 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const sectionTitleStyles = useMemo(() => {
+    return [
+      styles.sectionTitle,
+      {
+        color: isDarkMode ? Colors.white : Colors.black,
+      },
+    ];
+  }, [isDarkMode]);
+
+  const sectionsDescriptionStyles = useMemo(() => {
+    return [
+      styles.sectionDescription,
+      {
+        color: isDarkMode ? Colors.light : Colors.dark,
+      },
+    ];
+  }, [isDarkMode]);
+
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}></Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      <Text style={sectionTitleStyles}>{title}</Text>
+      <Text style={sectionTitleStyles}></Text>
+      <Text style={sectionsDescriptionStyles}>{children}</Text>
     </View>
   );
 }

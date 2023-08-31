@@ -21,6 +21,11 @@ export type RootParamList = {
   DRAWER: undefined;
 };
 
+export type TabRoutesList = Pick<
+  RootParamList,
+  'PROFILE' | 'DETAILS' | 'DRAWER' | 'MODALS'
+>;
+
 const Stack = createStackNavigator<RootParamList>();
 
 export type RootStackProps = CompositeScreenProps<

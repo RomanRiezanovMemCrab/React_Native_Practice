@@ -1,5 +1,6 @@
 import {Dimensions, Platform} from 'react-native';
 import {hasDynamicIsland, hasNotch} from 'react-native-device-info';
+import {ROUTES} from '../navigation/navigator-config';
 
 export const DEVICE_WIDTH = Dimensions.get('window').width;
 export const DEVICE_HEIGHT = Dimensions.get('window').height;
@@ -18,6 +19,13 @@ export const KEYBOARD_VERTICAL_OFFSET = IS_NOTCH
   : (DEVICE_HEIGHT / 100) * 9;
 export const MAX_WIDTH_DEVICE = 414;
 export const HORIZONTAL_SCROLL_PADDING = {paddingRight: 42};
+
+export const tabIconNames = {
+  [ROUTES.PROFILE]: 'user',
+  [ROUTES.DETAILS]: 'info',
+  [ROUTES.DRAWER]: 'star',
+  [ROUTES.MODALS]: 'list',
+};
 
 export const COLORS = {
   // primary & accent

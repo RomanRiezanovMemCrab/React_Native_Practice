@@ -27,8 +27,7 @@ export function DrawerNavigator() {
   return (
     <Drawer.Navigator
       initialRouteName={ROUTES.CONTACTS}
-      drawerContent={CustomDrawer}
-      screenOptions={{headerShown: false}}>
+      drawerContent={CustomDrawer}>
       <Drawer.Screen name={ROUTES.CONTACTS} component={ContactsScreen} />
     </Drawer.Navigator>
   );

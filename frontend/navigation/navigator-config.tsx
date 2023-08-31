@@ -1,6 +1,6 @@
 export const NavTheme = {} as const;
 
-export const ROOR_SCREEN_OPTIONS = {
+export const ROOT_SCREEN_OPTIONS = {
   headerShadowVisible: false,
 };
 
@@ -9,6 +9,13 @@ export const DISABLE_HEADER = {
 };
 
 export const ROUTES = {
+  WELCOME: 'WELCOME',
   HOME: 'HOME',
+  PROFILE: 'PROFILE',
+  USER_INFO: 'USER_INFO',
+  TRANSPARENT_USER_INFO: 'TRANSPARENT_USER_INFO',
+  MODALS: 'MODALS',
   DETAILS: 'DETAILS',
+  CONTACTS: 'CONTACTS',
+  DRAWER: 'DRAWER',
 } as const;

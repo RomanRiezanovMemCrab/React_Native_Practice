@@ -2,13 +2,10 @@ import {StyleSheet} from 'react-native';
 import {COLORS} from '../../theme/theme';
 
 export const styles = StyleSheet.create({
-  container: {
+  nativeModalWrapper: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  text: {
-    fontSize: 20,
-    color: COLORS.primary,
+    alignItems: 'center',
+    backgroundColor: COLORS.whiteBG,
   },
 });

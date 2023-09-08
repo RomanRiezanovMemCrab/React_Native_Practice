@@ -12,7 +12,7 @@ export function WelcomeScreen() {
       <FullScreenImage>
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
-            onPress={() => navigation.navigate(ROUTES.HOME)}
+            onPress={() => navigation.navigate(ROUTES.TABS)}
             style={styles.button}>
             <Text style={styles.text}>Continue</Text>
           </TouchableOpacity>

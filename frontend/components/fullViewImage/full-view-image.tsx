@@ -9,7 +9,7 @@ interface FullScreenImageProps {
 export const FullScreenImage = ({children}: FullScreenImageProps) => {
   return (
     <ImageBackground
-      source={require('../../assets/img/mountains.jpg')}
+      source={require('../../assets/img/cinema.jpg')}
       resizeMode="cover"
       style={styles.image}>
       {children}

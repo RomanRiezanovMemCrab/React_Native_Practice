@@ -21,10 +21,9 @@ export const MAX_WIDTH_DEVICE = 414;
 export const HORIZONTAL_SCROLL_PADDING = {paddingRight: 42};
 
 export const tabIconNames = {
-  [ROUTES.PROFILE]: 'user',
-  [ROUTES.DETAILS]: 'info',
-  [ROUTES.DRAWER]: 'star',
-  [ROUTES.MODALS]: 'list',
+  [ROUTES.HOME]: 'home',
+  [ROUTES.MOVIES]: 'play',
+  [ROUTES.CONTACTS]: 'address-book',
 };
 
 export const COLORS = {
@@ -33,6 +32,7 @@ export const COLORS = {
   accentBlue: '#0F556E',
   accentYellow: '#F4C430',
   secondary: '#AB2325',
+  netflix: '#E50914',
   // main colors
   white: '#fff',
   black: '#000',
@@ -43,6 +43,7 @@ export const COLORS = {
   additional: '#AB2325',
   additionalRed: '#CB6928',
   additionalYellow: '#E9D7A5',
+  inactive: '#D3D3D3',
   // text colors
   title: '#09252E',
   paragraph: '#3A5158',

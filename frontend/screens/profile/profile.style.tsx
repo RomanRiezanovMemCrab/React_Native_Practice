@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    color: COLORS.primary,
+    color: COLORS.blue,
   },
 });

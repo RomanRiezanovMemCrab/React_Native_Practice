@@ -1,11 +1,12 @@
 import {CompositeScreenProps} from '@react-navigation/native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {createStackNavigator} from '@react-navigation/stack';
+import {TransitionPresets, createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
 import {DISABLE_HEADER, ROOT_SCREEN_OPTIONS, ROUTES} from './navigator-config';
 import {WelcomeScreen} from '../screens/welcome/welcome-screen';
 import {TabsScreen} from '../tabs/tabs-navigator';
+import {ProfileScreen} from '../screens/profile/profile-screen';
 
 export type RootParamList = {
   WELCOME: undefined;
@@ -47,6 +48,15 @@ export function RootNavigationInner() {
         name={ROUTES.TABS}
         component={TabsScreen}
         options={DISABLE_HEADER}
+      />
+      <Stack.Screen
+        name={ROUTES.PROFILE}
+        component={ProfileScreen}
+        options={{
+          ...DISABLE_HEADER,
+          ...TransitionPresets.BottomSheetAndroid,
+          presentation: 'transparentModal',
+        }}
       />
     </Stack.Navigator>
   );

@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   button: {
     padding: 8,
     width: '85%',
-    backgroundColor: COLORS.blue,
+    backgroundColor: COLORS.netflix,
     borderRadius: 10,
   },
   text: {
@@ -27,5 +27,9 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '600',
     color: COLORS.white,
+
+    textShadowColor: 'rgba(255, 255, 255, 0.75)',
+    textShadowOffset: {width: -2, height: 3},
+    textShadowRadius: 10,
   },
 });

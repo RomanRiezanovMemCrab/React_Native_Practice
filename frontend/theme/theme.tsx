@@ -1,5 +1,5 @@
 import {Dimensions, Platform} from 'react-native';
-import {hasDynamicIsland, hasNotch} from 'react-native-device-info';
+import DeviceInfo, {hasDynamicIsland, hasNotch} from 'react-native-device-info';
 import {ROUTES} from '../navigation/navigator-config';
 
 export const DEVICE_WIDTH = Dimensions.get('window').width;
@@ -9,6 +9,9 @@ export const BIG_DEVICE = DEVICE_WIDTH > 380;
 export const LARGE_DEVICE = DEVICE_WIDTH > 580;
 export const IS_IOS = Platform.OS === 'ios';
 export const IS_ANDROID = Platform.OS === 'android';
+export const IS_OLD_ANDROID = Platform.Version < '16';
+export const HAS_NOTCH_AND_OLD_ANDROID =
+  DeviceInfo.hasNotch() && IS_OLD_ANDROID;
 export const HIT_SLOP = {top: 10, bottom: 10, left: 10, right: 10};
 export const EVENT_TROTTLE = 16;
 export const KEYBOARD_BEHIVATOR = Platform.OS === 'ios' ? 'padding' : 'height';
@@ -21,10 +24,8 @@ export const MAX_WIDTH_DEVICE = 414;
 export const HORIZONTAL_SCROLL_PADDING = {paddingRight: 42};
 
 export const tabIconNames = {
-  [ROUTES.PROFILE]: 'user',
-  [ROUTES.DETAILS]: 'info',
-  [ROUTES.DRAWER]: 'star',
-  [ROUTES.MODALS]: 'list',
+  [ROUTES.HOME]: 'home',
+  [ROUTES.CONTACTS]: 'address-book',
 };
 
 export const COLORS = {
@@ -33,6 +34,7 @@ export const COLORS = {
   accentBlue: '#0F556E',
   accentYellow: '#F4C430',
   secondary: '#AB2325',
+  netflix: '#E50914',
   // main colors
   white: '#fff',
   black: '#000',
@@ -43,6 +45,7 @@ export const COLORS = {
   additional: '#AB2325',
   additionalRed: '#CB6928',
   additionalYellow: '#E9D7A5',
+  inactive: '#D3D3D3',
   // text colors
   title: '#09252E',
   paragraph: '#3A5158',

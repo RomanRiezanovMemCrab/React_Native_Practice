@@ -7,11 +7,14 @@ import {DISABLE_HEADER, ROOT_SCREEN_OPTIONS, ROUTES} from './navigator-config';
 import {WelcomeScreen} from '../screens/welcome/welcome-screen';
 import {TabsScreen} from '../tabs/tabs-navigator';
 import {ProfileScreen} from '../screens/profile/profile-screen';
+import {MovieScreen} from '../screens/movie/movie-screen';
+import {Movie} from '../screens/home/home.types';
+import {IS_IOS} from '../theme/theme';
 
 export type RootParamList = {
   WELCOME: undefined;
   HOME: undefined;
-  MOVIES: undefined;
+  MOVIE: Movie;
   PROFILE: undefined;
   MODALS: undefined;
   USER_INFO: undefined;
@@ -22,7 +25,7 @@ export type RootParamList = {
   TABS: undefined;
 };
 
-export type TabRoutesList = Pick<RootParamList, 'HOME' | 'MOVIES' | 'CONTACTS'>;
+export type TabRoutesList = Pick<RootParamList, 'HOME' | 'CONTACTS'>;
 
 const Stack = createStackNavigator<RootParamList>();
 
@@ -55,8 +58,13 @@ export function RootNavigationInner() {
         options={{
           ...DISABLE_HEADER,
           ...TransitionPresets.BottomSheetAndroid,
-          presentation: 'transparentModal',
+          presentation: IS_IOS ? 'modal' : 'transparentModal',
         }}
+      />
+      <Stack.Screen
+        name={ROUTES.MOVIE}
+        component={MovieScreen}
+        options={DISABLE_HEADER}
       />
     </Stack.Navigator>
   );

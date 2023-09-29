@@ -41,6 +41,7 @@ export const styles = StyleSheet.create({
   descriptor: {
     fontSize: 15,
     fontFamily: 'Montserrat-Redular',
+    opacity: 0.4,
   },
   placeholder: {
     fontSize: 16,

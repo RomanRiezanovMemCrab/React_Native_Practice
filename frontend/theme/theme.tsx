@@ -22,7 +22,6 @@ export const HORIZONTAL_SCROLL_PADDING = {paddingRight: 42};
 
 export const tabIconNames = {
   [ROUTES.HOME]: 'home',
-  [ROUTES.MOVIES]: 'play',
   [ROUTES.CONTACTS]: 'address-book',
 };
 

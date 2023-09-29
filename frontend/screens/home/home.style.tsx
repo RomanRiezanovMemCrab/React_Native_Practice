@@ -1,20 +1,27 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../theme/theme';
+import {COLORS, DEVICE_HEIGHT, DEVICE_WIDTH} from '../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: COLORS.black,
   },
   userContainer: {
-    position: 'absolute',
-    top: 20,
-    left: 20,
+    marginTop: 10,
+    marginLeft: 10,
   },
   text: {
     fontSize: 20,
     color: COLORS.white,
+  },
+  moviesContainer: {
+    marginBottom: 40,
+  },
+  slide: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  moviePosterImage: {
+    borderRadius: 20,
   },
 });

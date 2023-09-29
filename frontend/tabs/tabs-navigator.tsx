@@ -6,7 +6,6 @@ import {COLORS, tabIconNames} from '../theme/theme';
 import {TabRoutesList} from '../navigation/root-navigator';
 import {HomeScreen} from '../screens/home/home-screen';
 import {ContactsScreen} from '../screens/contacts/contacts-screen';
-import {MoviesScreen} from '../screens/movies/movies-screen';
 import {tabBarStyle} from './tabs.style';
 
 const Tab = createBottomTabNavigator<TabRoutesList>();
@@ -26,7 +25,6 @@ export const TabsScreen: React.FC = () => (
       headerShown: false,
     })}>
     <Tab.Screen name={ROUTES.HOME} component={HomeScreen} />
-    <Tab.Screen name={ROUTES.MOVIES} component={MoviesScreen} />
     <Tab.Screen name={ROUTES.CONTACTS} component={ContactsScreen} />
   </Tab.Navigator>
 );

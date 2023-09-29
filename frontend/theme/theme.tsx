@@ -1,5 +1,5 @@
 import {Dimensions, Platform} from 'react-native';
-import {hasDynamicIsland, hasNotch} from 'react-native-device-info';
+import DeviceInfo, {hasDynamicIsland, hasNotch} from 'react-native-device-info';
 import {ROUTES} from '../navigation/navigator-config';
 
 export const DEVICE_WIDTH = Dimensions.get('window').width;
@@ -9,6 +9,9 @@ export const BIG_DEVICE = DEVICE_WIDTH > 380;
 export const LARGE_DEVICE = DEVICE_WIDTH > 580;
 export const IS_IOS = Platform.OS === 'ios';
 export const IS_ANDROID = Platform.OS === 'android';
+export const IS_OLD_ANDROID = Platform.Version < '16';
+export const HAS_NOTCH_AND_OLD_ANDROID =
+  DeviceInfo.hasNotch() && IS_OLD_ANDROID;
 export const HIT_SLOP = {top: 10, bottom: 10, left: 10, right: 10};
 export const EVENT_TROTTLE = 16;
 export const KEYBOARD_BEHIVATOR = Platform.OS === 'ios' ? 'padding' : 'height';

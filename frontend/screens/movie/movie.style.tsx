@@ -1,10 +1,16 @@
 import {StyleSheet} from 'react-native';
-import {COLORS, DEVICE_HEIGHT, DEVICE_WIDTH} from '../../theme/theme';
+import {
+  COLORS,
+  DEVICE_HEIGHT,
+  DEVICE_WIDTH,
+  HAS_NOTCH_AND_OLD_ANDROID,
+} from '../../theme/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.black,
+    opacity: HAS_NOTCH_AND_OLD_ANDROID ? 0.8 : 1,
   },
   header: {
     position: 'absolute',
